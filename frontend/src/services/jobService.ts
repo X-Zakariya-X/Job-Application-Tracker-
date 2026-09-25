@@ -51,9 +51,8 @@ export const jobService = {
   },
 
   async downloadResume(id: string) {
-    const response = await api.get(`/jobs/${id}/resume`, {
-      responseType: 'blob',
-    });
-    return response.data;
+    // Backend now returns a Cloudinary URL — open it directly for download
+    const response = await api.get(`/jobs/${id}/resume`);
+    return response.data; // { url, originalName }
   }
 };

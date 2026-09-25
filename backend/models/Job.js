@@ -58,7 +58,8 @@ const jobSchema = new mongoose.Schema({
   resumeFile: {
     filename: String,
     originalName: String,
-    path: String,
+    path: String,             // Cloudinary secure URL
+    cloudinaryPublicId: String, // used for deletion from Cloudinary
     uploadDate: {
       type: Date,
       default: Date.now
